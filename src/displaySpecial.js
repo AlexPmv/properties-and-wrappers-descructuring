@@ -1,6 +1,3 @@
-export default function displaySpecial(objSpecial) {
-  const {
-    id, name, icon, description = 'Описание недоступно',
-  } = objSpecial;
-  return [id, name, icon, description];
+export default function displaySpecial({ description = 'Описание недоступно', ...rest }) {
+  return Object.values(rest).concat([description]);
 }
